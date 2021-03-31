@@ -4,5 +4,5 @@
 #include "typewise-alert.h"
 
 TEST_CASE("infers the breach according to limits") {
-  REQUIRE(checkAndAlert(0, 0, 30) == TOO_LOW);
+  REQUIRE(checkAndAlert(TO_CONTROLLER,PASSIVE_COOLING,30) == TOO_LOW);
 }
