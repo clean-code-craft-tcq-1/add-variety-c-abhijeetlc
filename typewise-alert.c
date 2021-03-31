@@ -23,11 +23,11 @@ BreachType classifyTemperatureBreach(CoolingType coolingType, double temperature
   return inferBreach(temperatureInC, BreachLimitArr[coolingType].lowerLimit, BreachLimitArr[coolingType].upperLimit);
 }
 
-BreachType checkAndAlert(AlertTarget alertTarget, CoolingType coolingType, double temperatureInC) 
+BreachType checkAndAlert(AlertTarget alertTarget, CoolingType coolingTypeIn, double temperatureInC) 
 { 
   BatteryCharacter batteryChar;
-  batteryChar.coolingTypeIdentifier = coolingType ;	
-  BreachType breachType = classifyTemperatureBreach(batteryChar.coolingTypeIdentifier, temperatureInC);
+  batteryChar.coolingType = coolingTypeIn ;	
+  BreachType breachType = classifyTemperatureBreach(batteryChar.coolingType, temperatureInC);
    (*AlertTargetFunc[alertTarget])(breachType);
    return breachType;
 }
