@@ -32,7 +32,7 @@ typedef struct {
   char brand[48];
 } BatteryCharacter;
 
-BreachType checkAndAlert(AlertTarget alertTarget, CoolingType coolingType, double temperatureInC);
+BreachType checkAndAlert(AlertTarget alertTarget, CoolingType coolingTypeIn, double temperatureInC) ;
 
 void sendToController(BreachType breachType);
 void sendToEmail(BreachType breachType);
