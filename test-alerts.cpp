@@ -3,6 +3,19 @@
 #include "test/catch.hpp"
 #include "typewise-alert.h"
 
+/* ------------------*************---------------------
+Flow of test / code 
+
+checkAndAlert()
+    \  /
+     \/
+classifyTemperatureBreach()
+    \  /
+     \/
+ inferBreach()
+ 
+ ------------------*************--------------------- */
+    
 TEST_CASE("infers the breach according to limits") {
-  REQUIRE(inferBreach(12, 20, 30) == TOO_LOW);
+  REQUIRE(checkAndAlert(TO_CONTROLLER,PASSIVE_COOLING,30) != TOO_LOW);
 }
